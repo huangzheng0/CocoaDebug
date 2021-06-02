@@ -41,7 +41,7 @@
 
 @interface UIColor (CocoaDebug)
 
-+ (UIColor *_Nullable)colorFromHexString:(NSString *_Nullable)hexString;
++ (UIColor *_Nullable)colorFromHexStringCocoaDebug:(NSString *_Nullable)hexString;
 
 @end
 

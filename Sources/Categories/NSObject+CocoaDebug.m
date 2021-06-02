@@ -77,7 +77,7 @@
 
 @implementation UIColor (CocoaDebug)
 
-+ (UIColor *)colorFromHexString:(NSString *)hexString
++ (UIColor *)colorFromHexStringCocoaDebug:(NSString *)hexString
 {
     unsigned rgbValue = 0;
     NSScanner *scanner = [NSScanner scannerWithString:hexString];
