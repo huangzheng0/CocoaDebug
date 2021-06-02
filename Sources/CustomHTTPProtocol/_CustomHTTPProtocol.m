@@ -430,6 +430,7 @@ static NSString * kOurRecursiveRequestFlagProperty = @"com.apple.dts.CustomHTTPP
     }
     
     NSHTTPURLResponse* httpResponse = (NSHTTPURLResponse*)self.response;
+    
     model.statusCode = [NSString stringWithFormat:@"%d",(int)httpResponse.statusCode];
     model.responseData = self.data;
     model.size = [[NSByteCountFormatter new] stringFromByteCount:self.data.length];

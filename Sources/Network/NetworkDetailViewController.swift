@@ -49,11 +49,17 @@ class NetworkDetailViewController: UITableViewController, MFMailComposeViewContr
         if httpModel?.responseData == nil {
             httpModel?.responseData = Data.init()
         }
-        
+        let netWorkHelper =  _NetworkHelper.shared()
         //判断请求参数格式JSON/Form
         if requestSerializer == RequestSerializer.JSON {
             //JSON
-            requestContent = httpModel?.requestData.dataToPrettyPrintString()
+            if(netWorkHelper?.requestNetWorkParse != nil){
+                let result = netWorkHelper?.requestNetWorkParse(httpModel?.requestData)
+                requestContent = result
+            }
+            if(requestContent == nil){
+                requestContent = httpModel?.requestData.dataToPrettyPrintString()
+            }
         }
         else if requestSerializer == RequestSerializer.form {
             if let data = httpModel?.requestData {
@@ -124,7 +130,14 @@ class NetworkDetailViewController: UITableViewController, MFMailComposeViewContr
             //1.主要
             let model_1 = NetworkDetailModel.init(title: "URL", content: "https://github.com/CocoaDebug/CocoaDebug", url: httpModel?.url.absoluteString, httpModel: httpModel)
             let model_3 = NetworkDetailModel.init(title: "REQUEST", content: requestContent, url: httpModel?.url.absoluteString, httpModel: httpModel)
-            let model_5 = NetworkDetailModel.init(title: "RESPONSE", content: httpModel?.responseData.dataToPrettyPrintString(), url: httpModel?.url.absoluteString, httpModel: httpModel)
+            var responseStr:String? = nil
+            if(netWorkHelper?.responseNetWorkParse != nil){
+                responseStr = netWorkHelper?.responseNetWorkParse(httpModel?.responseData)
+            }
+            if(responseStr == nil){
+                responseStr = httpModel?.responseData.dataToPrettyPrintString()
+            }
+            let model_5 = NetworkDetailModel.init(title: "RESPONSE", content: responseStr, url: httpModel?.url.absoluteString, httpModel: httpModel)
             let model_6 = NetworkDetailModel.init(title: "ERROR", content: httpModel?.errorLocalizedDescription, url: httpModel?.url.absoluteString, httpModel: httpModel)
             let model_7 = NetworkDetailModel.init(title: "ERROR DESCRIPTION", content: httpModel?.errorDescription, url: httpModel?.url.absoluteString, httpModel: httpModel)
             //2.次要

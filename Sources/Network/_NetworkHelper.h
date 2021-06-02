@@ -44,7 +44,11 @@
 
 @property (nonatomic, assign) BOOL isNetworkEnable;
 
+//huangzheng 解析网络请求,用于自定义的加密请求
+@property (nonatomic, assign) NSString* (^requestNetWorkParse)(NSData *);
 
+//huangzheng 解析网络请求,用于自定义的加密请求
+@property (nonatomic, assign) NSString* (^responseNetWorkParse)(NSData *);
 /**
  *  启用
  */

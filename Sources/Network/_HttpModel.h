@@ -16,6 +16,7 @@ typedef NS_ENUM(NSUInteger, RequestSerializer) {
 
 @interface _HttpModel : NSObject
 
+
 @property (nonatomic,strong)NSURL   *url;
 @property (nonatomic,copy)NSData    *requestData;
 @property (nonatomic,copy)NSData    *responseData;
