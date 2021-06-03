@@ -17,10 +17,10 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JC4-1t-BQJ">
-                        <rect key="frame" x="301" y="0.0" width="74" height="140"/>
+                        <rect key="frame" x="315" y="0.0" width="60" height="140"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="200" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RDG-ui-8nx">
-                                <rect key="frame" x="20.5" y="59.5" width="33" height="21"/>
+                                <rect key="frame" x="13.5" y="59.5" width="33" height="21"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -29,7 +29,7 @@
                         <color key="backgroundColor" red="0.199973762" green="0.2000150383" blue="0.19997116919999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <gestureRecognizers/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="74" id="EoQ-lv-MtU"/>
+                            <constraint firstAttribute="width" constant="60" id="EoQ-lv-MtU"/>
                             <constraint firstItem="RDG-ui-8nx" firstAttribute="centerX" secondItem="JC4-1t-BQJ" secondAttribute="centerX" id="ITm-M8-qRD"/>
                             <constraint firstItem="RDG-ui-8nx" firstAttribute="centerY" secondItem="JC4-1t-BQJ" secondAttribute="centerY" id="Kfl-tA-9qT"/>
                         </constraints>
@@ -41,15 +41,15 @@
                             <constraint firstAttribute="width" id="Hac-EL-A9K"/>
                         </constraints>
                     </view>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[POST]" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="1" translatesAutoresizingMaskIntoConstraints="NO" id="v8G-CW-gTr">
-                        <rect key="frame" x="9" y="16" width="60" height="21"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="1" translatesAutoresizingMaskIntoConstraints="NO" id="v8G-CW-gTr">
+                        <rect key="frame" x="9" y="16" width="0.0" height="0.0"/>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                         <color key="textColor" red="0.50190365314483643" green="0.50199371576309204" blue="0.50189799070358276" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="image" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Uk-na-nYw">
-                        <rect key="frame" x="9" y="8.5" width="18.5" height="7.5"/>
-                        <fontDescription key="fontDescription" type="italicSystem" pointSize="6"/>
+                        <rect key="frame" x="9" y="6" width="24" height="10"/>
+                        <fontDescription key="fontDescription" type="italicSystem" pointSize="8"/>
                         <nil key="highlightedColor"/>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
@@ -61,15 +61,15 @@
                         </userDefinedRuntimeAttributes>
                     </label>
                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" text="Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do " textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="QzV-et-yBo" customClass="CustomTextView" customModule="CocoaDebug" customModuleProvider="target">
-                        <rect key="frame" x="9" y="41" width="283" height="83"/>
+                        <rect key="frame" x="9" y="20" width="297" height="104"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                     </textView>
                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" text="2017-23-21 23:23:23" translatesAutoresizingMaskIntoConstraints="NO" id="kwZ-en-pn0" customClass="CustomTextView" customModule="CocoaDebug" customModuleProvider="target">
-                        <rect key="frame" x="73" y="20.5" width="136.5" height="12"/>
+                        <rect key="frame" x="13" y="7" width="136.5" height="18"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="12" id="ObU-lg-hpy"/>
+                            <constraint firstAttribute="height" constant="18" id="ObU-lg-hpy"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
