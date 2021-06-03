@@ -49,19 +49,17 @@ class NetworkCell: UITableViewCell {
             }
             
             //请求方式
-//            if let method = httpModel?.method {
-//                methodLabel.text = "[" + method + "]"
-//            }
-            
-            //请求时间
-            var timeText :String = ""
+             
             if(httpModel?.requestHeaderFields.count ?? 0 > 0 ){
                 let action = httpModel!.requestHeaderFields!["action"] as? String
                 if(action?.count ?? 0 > 0){
-                    timeText.append(action!)
-                    timeText.append("  ")
+                    methodLabel.text = "[" + action! + "]"
                 }
             }
+            
+            //请求时间
+            var timeText :String = ""
+            
             if let startTime = httpModel?.startTime {
                 if (startTime as NSString).doubleValue == 0 {
                     timeText.append(self.dateFormat.string(for: Date()) ?? "")
