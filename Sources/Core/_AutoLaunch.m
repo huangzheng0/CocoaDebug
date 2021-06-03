@@ -23,7 +23,9 @@ static const char *kPropertyKey = "kApplicationDidFinishLaunching_CocoaDebug_Key
 
 #pragma mark - load
 + (void)load {
+#ifndef APP_STORE
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(cocoadebug_applicationDidFinishLaunchingNotification:) name:UIApplicationDidFinishLaunchingNotification object:nil];
+#endif
 }
 
 #pragma mark - notification
