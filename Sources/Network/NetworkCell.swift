@@ -21,6 +21,10 @@ class NetworkCell: UITableViewCell {
     
     var index: NSInteger = 0
     
+    let dateFormat :DateFormatter = DateFormatter.init();
+    
+   
+    
     var httpModel: _HttpModel? {
         didSet {
             
@@ -45,18 +49,30 @@ class NetworkCell: UITableViewCell {
             }
             
             //请求方式
-            if let method = httpModel?.method {
-                methodLabel.text = "[" + method + "]"
-            }
+//            if let method = httpModel?.method {
+//                methodLabel.text = "[" + method + "]"
+//            }
             
             //请求时间
-            if let startTime = httpModel?.startTime {
-                if (startTime as NSString).doubleValue == 0 {
-                    requestTimeTextView.text = _OCLoggerFormat.formatDate(Date())
-                } else {
-                    requestTimeTextView.text = _OCLoggerFormat.formatDate(NSDate(timeIntervalSince1970: (startTime as NSString).doubleValue) as Date)
+            var timeText :String = ""
+            if(httpModel?.requestHeaderFields.count ?? 0 > 0 ){
+                let action = httpModel!.requestHeaderFields!["action"] as? String
+                if(action?.count ?? 0 > 0){
+                    timeText.append(action!)
+                    timeText.append("  ")
                 }
             }
+            if let startTime = httpModel?.startTime {
+                if (startTime as NSString).doubleValue == 0 {
+                    timeText.append(self.dateFormat.string(for: Date()) ?? "")
+                   
+                } else {
+                    timeText.append(self.dateFormat.string(for: NSDate(timeIntervalSince1970: (startTime as NSString).doubleValue) as Date) ?? "")
+                }
+            }
+          
+            
+            requestTimeTextView.text  = timeText
             
             //https://httpcodes.co/status/
             let successStatusCodes = ["200","201","202","203","204","205","206","207","208","226"]
@@ -126,7 +142,9 @@ class NetworkCell: UITableViewCell {
     //MARK: - awakeFromNib
     override func awakeFromNib() {
         super.awakeFromNib()
-        
+        dateFormat.timeZone = NSTimeZone.system
+        dateFormat.dateFormat = "HH:mm:ss.SSS"
+    
         imageLabel.backgroundColor = Color.mainGreen
         requestTimeTextView.textColor = Color.mainGreen
         
