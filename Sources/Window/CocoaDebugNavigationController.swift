@@ -21,6 +21,7 @@ class CocoaDebugNavigationController: UINavigationController {
             appearence.backgroundColor = Color.mainGreen
             navigationBar.standardAppearance = appearence
         }
+        navigationBar.backgroundColor = Color.mainGreen
         navigationBar.titleTextAttributes = [.font: UIFont.boldSystemFont(ofSize: 20),
                                              .foregroundColor: Color.mainGreen]
         
