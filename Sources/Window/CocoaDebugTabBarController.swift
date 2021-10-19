@@ -20,6 +20,7 @@ class CocoaDebugTabBarController: UITabBarController {
         
         self.selectedIndex = CocoaDebugSettings.shared.tabBarSelectItem 
         self.tabBar.tintColor = Color.mainGreen
+        self.tabBar.backgroundColor = Color.mainGreen
     }
     
     override func viewWillAppear(_ animated: Bool) {
