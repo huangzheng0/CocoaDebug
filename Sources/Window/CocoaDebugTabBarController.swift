@@ -19,7 +19,7 @@ class CocoaDebugTabBarController: UITabBarController {
         setChildControllers()
         
         self.selectedIndex = CocoaDebugSettings.shared.tabBarSelectItem 
-        self.tabBar.tintColor = Color.mainGreen
+        self.tabBar.tintColor = UIColor.white
         self.tabBar.backgroundColor = Color.mainGreen
     }
     
